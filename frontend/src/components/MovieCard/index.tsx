@@ -1,7 +1,7 @@
-import MovieScore from "../MovieScore"
+import { Link } from "react-router-dom";
+import MovieScore from "../MovieScore";
 
 function MovieCard() {
-
   //Objeto mocado
   const movie = {
     id: 1,
@@ -11,17 +11,24 @@ function MovieCard() {
     count: 2,
     score: 4.5,
   };
-   
+
   return (
     <div>
-    <img className="dsmovie-movie-card-image" src={movie.image} alt={movie.title} />
-    <div className="dsmovie-card-bottom-container">
+      <img
+        className="dsmovie-movie-card-image"
+        src={movie.image}
+        alt={movie.title}
+      />
+      <div className="dsmovie-card-bottom-container">
         <h3>{movie.title}</h3>
         <MovieScore />
-        <div className="btn btn-primary dsmovie-btn">Avaliar</div>
+
+        <Link to={`/form/${movie.id}`}>
+          <div className="btn btn-primary dsmovie-btn">Avaliar</div>
+        </Link>
+      </div>
     </div>
-</div>
-  )
+  );
 }
 
-export default MovieCard
+export default MovieCard;
