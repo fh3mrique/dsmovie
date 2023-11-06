@@ -1,6 +1,7 @@
 package com.pessoal.dsmovie.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +13,7 @@ import com.pessoal.dsmovie.services.ScoreService;
 
 @RestController
 @RequestMapping(value = "/scores")
+@CrossOrigin(origins = "*" )
 public class ScoreController {
 	
 	@Autowired
