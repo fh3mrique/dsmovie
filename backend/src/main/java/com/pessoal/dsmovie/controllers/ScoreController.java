@@ -13,16 +13,16 @@ import com.pessoal.dsmovie.services.ScoreService;
 
 @RestController
 @RequestMapping(value = "/scores")
-@CrossOrigin(origins = "*" )
+@CrossOrigin(origins = "*")
 public class ScoreController {
-	
+
 	@Autowired
 	private ScoreService scoreService;
-	
+
 	@PutMapping
-	public MovieDTO saveScore (@RequestBody ScoreDTO dto ){
+	public MovieDTO saveScore(@RequestBody ScoreDTO dto) {
+
 		return scoreService.saveScore(dto);
 	}
-	
-	
+
 }
